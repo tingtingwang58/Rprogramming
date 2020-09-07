@@ -1,3 +1,5 @@
+## this MakeCacheMatrix function creates a special “matrix” object
+
 makeCacheMatrix <- function(x = matrix()) {
   inv <- NULL 
   set <- function(y) {
@@ -9,6 +11,7 @@ makeCacheMatrix <- function(x = matrix()) {
   getInverse<- function() {inv}
   list(set = set, get = get, setInverse = setInverse, getInverse = getInverse)
 }
+## Cachemean function computes the inverse of the special “matrix”. Return a matrix that is the inverse of 'x'
 
 cacheSolve <- function(x, ...) {
   inv <- x$getInverse()
